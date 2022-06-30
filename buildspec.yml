@@ -2,9 +2,6 @@ version: 0.2
 
 
 phases:
-  install:
-    runtime-versions:
-      python: 3.7
   pre_build:
     commands:
       - mvn clean install
@@ -28,7 +25,7 @@ phases:
       - docker push $REPOSITORY_URI:latest
       - docker push $REPOSITORY_URI:$IMAGE_TAG
       - echo Writing image definitions file...
-      - printf '[{"name":"curso1","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
+      - printf '[{"name":"p-new-practica-repositorio","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
       - cat imagedefinitions.json
 artifacts:
   files:
